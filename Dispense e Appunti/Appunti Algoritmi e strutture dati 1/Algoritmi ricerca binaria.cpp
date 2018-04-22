@@ -3,7 +3,7 @@ int bin_search_ric (int S[], int v, int i, int j){
 	m=(i+j)/2;
 	if (S[m]==v) return m;
 	if (S[m]<v) return bin_search_ric(S, v, m+1, j);
-	return bin_search_ric(S, v, i, m+1);
+	return bin_search_ric(S, v, i, m-1);
 }
 
 int bin_search_it (int V[], int i, int j, int x) {
