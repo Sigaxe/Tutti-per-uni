@@ -33,17 +33,18 @@ void selection_sort(int A[], int n){
 	}
 return;}
 
-void torneo_italiana(int V[], int n){
-	b = new int [n];
-	z = new int [n];
-	for (int i=0; i<n; i++) b[i]=0;
-	for (int i=0; i<n; i++)
-		for (j=i; j<n; j++){
+void torneoItaliana(int V[], int n){
+	int b[n],z[n],i,j;
+	for (i=0; i<n; i++) b[i]=0;
+	for (i=0; i<n; i++)
+		for (j=i+1; j<n; j++){
 			if (V[i]<V[j]) b[j]++;
 			else b[i]++;
 		}
-	for (i=0; i<n; i++) z[b[i]]=V[i];	
-return;}
+	for (i=0; i<n; i++) z[b[i]]=V[i];
+	for (i=0; i<n; i++) V[i]=z[i];
+    return;
+}
 
 void bubble_sort(int A[], int n){
 	for (int k=1; k<n; k++)
