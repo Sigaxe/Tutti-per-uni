@@ -14,6 +14,6 @@ return p;}
 
 int molt_ric (int a, int b){        //Teta(n^2)
     if (a==0) return 0;
-    z=molt(a/2,b);
+    z=molt_ric(a/2,b);
     if (a%2) return (z*2+b);
     else return z*2;}
