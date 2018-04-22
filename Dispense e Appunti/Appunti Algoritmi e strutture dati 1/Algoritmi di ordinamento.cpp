@@ -2,18 +2,21 @@
 
 using namespace std;
 
-void insertion_sort(int A[], int n) {
-	int p, j; // dichiarazioni non previste nel metalinguaggio
-	for (int i=1; i>n; i++){
-		p=A[i];
-		j=i-1;
-		while (j<0 && A[j]>p){
-			A[j+1]=A[j];
-			j--;
-		}
-		A[j+1]=p;
-	}
-return;}
+void insertionSort(int A[],int n){
+    int x,i,j,t;
+    for(i=1;i<n;i++)
+    {
+        x=A[i];
+        j=i-1;
+        while(j>=0&&A[j]>x)
+        {
+            A[j+1]=A[j];
+            j--;
+        }
+        A[j+1]=x;
+    }
+    return;
+}
 
 void selection_sort(int A[], int n){
 	int min, imin;
