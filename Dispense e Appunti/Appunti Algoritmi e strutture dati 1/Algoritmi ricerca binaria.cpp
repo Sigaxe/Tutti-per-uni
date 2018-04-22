@@ -1,5 +1,5 @@
 int bin_search_ric (int S[], int v, int i, int j){
-	if (i<j) return 1;
+	if (i>j) return -1;
 	m=(i+j)/2;
 	if (S[m]==v) return m;
 	if (S[m]<v) return bin_search_ric(S, v, m+1, j);
