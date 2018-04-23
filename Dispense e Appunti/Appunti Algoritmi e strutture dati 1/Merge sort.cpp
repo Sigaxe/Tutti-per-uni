@@ -1,3 +1,32 @@
+void f_merge(int A[],int l,int c,int r)
+{
+    int i=l,j=c+1,k=0,B[r-l+1];
+    while(i<=c&&j<=r){
+        if(A[i]<=A[j]){
+            B[k]=A[i];
+            i++;
+            }
+        else{
+            B[k]=A[j];
+            j++;
+        }
+        k++;
+    }
+    while(i<=c){
+        B[k]=A[i];
+        i++;
+        k++;
+    }
+    while(j<=r){
+        B[k]=A[j];
+        j++;
+        k++;
+    }
+    for(k=l;k<=r;k++)
+        A[k]=B[k-l];
+    return;
+}
+
 void merge_sort (int V[], int i, int j) {
     if (i<j) {
         k=(i+j)/2;
@@ -41,7 +70,7 @@ void mergesort(A[], int s, int c, int e){   //versione del merge sort senza merg
     int k=0;
     while (i<=c && j<=e) {
         if (A[i]<=A[j]) B[k++]=A[i++];
-        else B[k++]=A[j++]              //può capitare che una delle due parti si esaurisca
+        else B[k++]=A[j++]              //puÃ² capitare che una delle due parti si esaurisca
     }
     while (i<=c) B[k++]=A[i++];
     while (j<=e) B[k++]=A[j++];
