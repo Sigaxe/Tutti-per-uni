@@ -10,12 +10,12 @@ int x_alla_y_ric(int x, int y){
 return ris;}
 
 int x_alla_y_iterativo(int x, int y){
-	int z=1;
-	if (y%2) z=x;
-	y=y/2;
-	while (y!=2) {
-		x=x*x;
-		if (y%2) z=z*x
+	int r=1;
+	while (y>0) {
+		if (y%2==1)
+            r=r*x;
+        x=x*x;
 		y=y/2;
 	}
-return z;}
+    return r;
+}
